@@ -8,6 +8,7 @@ on:
     paths:
       - 'api/**'
       - 'web/**'
+  workflow_dispatch:
 
 jobs:
   build:
