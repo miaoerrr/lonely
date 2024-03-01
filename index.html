@@ -5,12 +5,29 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="description" content="悄悄的我走了 正如我悄悄的来">
   <title>Lonely</title>
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+  <div>
+    正在努力的加载中
+    <span id="loading" style="word-break: break-word"></span>
+  </div>
+</div>
+<script>
+  let loading_interval = setInterval(() => {
+    let loading = document.getElementById('loading')
+    if (loading) {
+      loading.append('。')
+      console.log('还在加载呢')
+    } else {
+      clearInterval(loading_interval)
+      console.info(`加载完成啦 ${loading_interval}`)
+    }
+  }, 500)
+</script>
 <script type="module" src="/web/main.ts"></script>
 </body>
 </html>
